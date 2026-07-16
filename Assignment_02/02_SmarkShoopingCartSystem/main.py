@@ -1,33 +1,21 @@
-# Create a user-defined function called shopping_cart() that:
-
-# 1. Allows the user to enter 5 product prices.
-# 2. Stores the prices in a list.
-# 3. Uses a loop to calculate the total bill.
-# 4. Applies discounts using conditional statements:
-#     * Total ≥ 5000 → 15% discount
-#     * Total ≥ 3000 → 10% discount
-#     * Total ≥ 1000 → 5% discount
-#     * Otherwise → No discount
-# 5. Displays:
-#     * Product list
-#     * Total amount
-#     * Discount amount
-#     * Final payable amount
-
+#Creating a user-defined function
 def shooping_cart():
     prices = []
     products = []
+
+    #Entering the five product prices
     for i in range(5):
         prod = input("Enter the name of the product: ")
         price = float(input("Enter the product price: "))
         prices.append(price)
         products.append(prod)
 
-        
+    #Using loop to calculate total bill  
     total = 0
     for price in prices:
         total+=price
 
+    #Using the conditional statement to apply discount
     if (total >= 5000):
         discount = "15%"
         dis_amt = (0.15*total)
@@ -45,6 +33,7 @@ def shooping_cart():
         dis_amt = 0
         final_pay = total
 
+   #Displaying the product list, product prices, discount, and final payable amount
     print("\n----- Shopping Cart -----")
     print("Product Lists: ", products)
     print("Product prices: ",prices)
@@ -53,5 +42,5 @@ def shooping_cart():
     print("Discounted Amount = ",dis_amt)
     print("Final Payable Amount= ",final_pay)
     
-
+#Calling the function
 shooping_cart()
